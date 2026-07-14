@@ -50,7 +50,7 @@ Streetwear</span>
 drenched aesthetics of the millennium for the
 modern concrete jungle.</p>
 <ul class="hero-list">
-    <li class="hero-item"><button type="button" class="hero-btn">Explore Archive</button></li>
+    <li class="hero-item"><button type="button" class="hero-btn" data-modal-open>Explore Archive</button></li>
     <li class="hero-item"><button type="button" class="hero-btn2">View Drops</button></li>
 </ul>
     </div>
@@ -232,5 +232,41 @@ Discord
 <p class="footer-rights">© 2024 SOLARIUM ARCHIVE. CURATED IN LIGHT.</p>
     </div>
     </footer>
+
+<div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+        <button class="modal-close" type="button" data-modal-close>
+            ✕
+        </button>
+
+        <h2 class="modal-title">Secret Drop</h2>
+
+        <p class="modal-text">
+            Get exclusive access to our newest archive collection.
+        </p>
+
+        <img src="img/ChunkySneakers.png" alt="Secret Drop">
+
+        <button class="modal-btn">
+            Unlock Access
+        </button>
+    </div>
+</div>
+
+<script>
+const refs = {
+  openModalBtn: document.querySelector("[data-modal-open]"),
+  closeModalBtn: document.querySelector("[data-modal-close]"),
+  modal: document.querySelector("[data-modal]"),
+};
+
+refs.openModalBtn.addEventListener("click", toggleModal);
+refs.closeModalBtn.addEventListener("click", toggleModal);
+
+function toggleModal() {
+  refs.modal.classList.toggle("is-hidden");
+}
+</script>
+
 </body>
 </html>
